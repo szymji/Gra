@@ -11,5 +11,5 @@ Lustro::Lustro(int xx,int yy):
 double Lustro::getSlope()
 {
 
-    return tan(mirror_angle);
+    return -tan(mirror_angle);
 }
