@@ -14,6 +14,7 @@ private:
     friend class Scene;
 public:
     Lustro(int=0,int=0);
+    double getSlope();
 
 };
 

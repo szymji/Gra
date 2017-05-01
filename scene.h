@@ -11,15 +11,15 @@ class Scene : public QWidget
 {
      Q_OBJECT
 private:
-    int n;
-    Lustro tab[4];  // dodac dynamiczna tablice
+    int n,nmax;
+    Lustro* tab;  // bedzie rozszerzajaca sie tablica
 
     void paintEvent(QPaintEvent*);
 
 public:
     Scene(QWidget *parent = 0);
-    void addMirror(Lustro&);
-  //  ~Scene();
+    void addMirror(Lustro);
+    ~Scene(){ delete tab; }
 };
 
 
