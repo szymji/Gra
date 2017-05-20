@@ -1,18 +1,24 @@
-#include "mainwindow.h"
-#include "lustro.h"
-#include "scene.h"
-#include <QApplication>
+#include "game.h"
+#include "mirror.h"
+#include<QApplication>
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
 
-    Scene scena(&w);
-    Lustro lustro(300,300);
-    Lustro lusterko(100,100);
-    scena.addMirror(lustro);
-    scena.addMirror(lusterko);
-    w.show();
+    Game g;
+
+    Mirror lustro(100,100);
+    Mirror lusterko(300,300);
+    Mirror zwierciadlo(130,140,20);
+    Mirror lustro2(100,100,50);
+    g.addMirror(&lustro);
+    g.addMirror(&lusterko);
+    g.addMirror(&zwierciadlo);
+    g.addMirror(&lustro2);
+
+    g.show();
+
     return a.exec();
 }
